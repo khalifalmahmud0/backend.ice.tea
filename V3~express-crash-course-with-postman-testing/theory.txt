@@ -1,0 +1,11 @@
+Express Is a Simple Library,
+to make route 
+auth , authorization , businees login
+Framework fro nodejs
+
+
+Express Alternative => Hono / Elysia
+
+Mongoose is a mongodb database
+
+Mongoose alternative => prisma / drizzle
