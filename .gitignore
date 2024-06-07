@@ -29,3 +29,9 @@ next-env.d.ts
 package-lock.json
 yarn.lock
 .idea
+node_modules
+/V3~express-crash-course-with-postman-testing/node_modules
+*.lock
+/V3~express-crash-course-with-postman-testing/yarn.lock
+/V3~express-crash-course-with-postman-testing/*.lock
+
