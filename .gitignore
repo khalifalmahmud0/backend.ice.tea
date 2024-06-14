@@ -35,3 +35,6 @@ node_modules
 /V3~express-crash-course-with-postman-testing/yarn.lock
 /V3~express-crash-course-with-postman-testing/*.lock
 
+/V5~advance-logging-with-morgan-and-winston/*.lock
+/V5~advance-logging-with-morgan-and-winston/node_modules
+/V5~advance-logging-with-morgan-and-winston/*.log
