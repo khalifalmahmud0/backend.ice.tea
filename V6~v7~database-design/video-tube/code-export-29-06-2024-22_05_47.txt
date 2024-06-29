@@ -1,0 +1,90 @@
+videos [icon: video] {
+  _id string pk
+  videoFile string
+  thumbnail string
+  owner objectID users
+  title string
+  description string
+  duration number
+  views number
+  isPublished boolean
+  createdAt Date
+  updatedAt Date
+}
+
+users [icon: user] {
+  _id string pk
+  watchHistory objectID[] videos
+  username string
+  email string
+  fullName string
+  avatar string
+  coverImage string
+  password string
+  refreshToken string
+  createdAt Date
+  updatedAt Date
+}
+
+playlists [icon: book-open] {
+  _id string pk
+  name string
+  description string
+  videos objectID[] videos
+  owner objectID users
+  createdAt Date
+  updatedAt Date
+}
+
+comments [icon: comments] {
+  _id string pk
+  content string
+  owner objectID users
+  video objectID videos
+  createdAt Date
+  updatedAt Date
+}
+
+tweets [icon: twitter] {
+  _id string pk
+  owner objectID users
+  content string
+  createdAt Date
+  updatedAt Date
+}
+
+subscription [icon: dollar-sign] {
+  _id string pk
+  subscriber objectID users
+  channel objectID users
+  createdAt Date
+  updatedAt Date
+}
+
+likes [icon: hand] {
+  _id string pk
+  comment objectID comments
+  video objectID videos
+  likedBy objectID users
+  tweet objectID tweets
+  createdAt Date
+  updatedAt Date
+}
+
+users.watchHistory <> videos._id
+videos.owner - users._id
+subscription.subscriber - users._id
+subscription.channel - users._id
+
+likes.likedBy - users._id
+likes.video - videos._id
+likes.comment - comments._id
+likes.tweet - tweets._id
+
+comments.owner - users._id
+comments.video - videos._id
+
+playlists.owner - users._id
+playlists.videos  < videos._id
+
+tweets.owner - users._id

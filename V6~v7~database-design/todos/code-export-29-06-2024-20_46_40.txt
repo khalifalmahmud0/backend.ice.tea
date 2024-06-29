@@ -1,0 +1,29 @@
+todos [icon: list] {
+  _id string pk
+  content string
+  Complete boolean
+  subtodos objectID[] subtodos
+  createby objectID users
+  createdAt Date
+  updatedAt Date
+}
+subtodos [icon: list] {
+  _id string pk
+  content string
+  Complete boolean
+  createby objectID users
+  createdAt Date
+  updatedAt Date
+}
+users [icon: user] {
+  _id string pk
+  username string
+  email string
+  password string
+  createdAt Date
+  updatedAt Date
+}
+
+todos.subtodos < subtodos._id
+todos.createby - users._id
+subtodos.createby - users._id

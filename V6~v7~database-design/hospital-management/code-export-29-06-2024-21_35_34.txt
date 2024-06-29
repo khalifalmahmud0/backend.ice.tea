@@ -1,0 +1,48 @@
+hospitals [icon: building] {
+  _id string 
+  name string
+  address string
+  city string
+  pincode number
+  specialization string[]
+  createdAt Date
+  updatedAt Date
+}
+
+patients [icon: user] {
+  _id string pk
+  name string
+  diagnoseWith string
+  address string
+  age number
+  gender enum "M","F"
+  bloodgroup string
+  admittedIn objectID hospitals
+  createdAt Date
+  updatedAt Date
+}
+
+doctors [icon: stethoscope] {
+  _id string pk
+  name string
+  salary string
+  qualification string
+  experienceInYears number
+  worksInHospitals objectID [] hospitals
+  createdAt Date
+  updatedAt Date
+}
+
+medicalRecords [icon: clipboard] {
+  _id string pk
+  patientID objectID patients
+  examineAt Date 
+  problem string
+  description string
+  createdAt Date
+  updatedAt Date
+}
+
+patients.admittedIn - hospitals._id
+doctors.worksInHospitals < hospitals._id
+medicalRecords.patientID - patients._id
