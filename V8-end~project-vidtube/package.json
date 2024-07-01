@@ -1,7 +1,7 @@
 {
   "name": "v8-end~project-vidtube",
   "version": "1.0.0",
-  "description": "A Project Inspired By Youtube | Last Watch Video: 08",
+  "description": "A Project Inspired By Youtube",
   "type": "module",
   "main": "src/index.js",
   "scripts": {
@@ -21,6 +21,8 @@
     "prettier": "^3.3.2"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.4.4"
   }
